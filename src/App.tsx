@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import { AuthProvider } from './hooks/AuthContext';
 import axios from 'axios';
 import { API_URL } from './config';
+import Register from './pages/Register';
 // import Home from './pages/Home';
 // import NotFound from './pages/NotFound';
 // import Create from './pages/Create';
@@ -42,13 +43,11 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        {/* <div className='App'> */}
-        {/* <AuthProvider> */}
         <NavbarComponent
           navbarVisible={navbarVisible}
           setNavbarVisible={setNavbarVisible}
         />
-        {/* <SearchEvents /> */}
+
         <Container>
           <Routes>
             <Route path='/' element={<Home />} />
@@ -56,73 +55,9 @@ function App() {
             <Route path='/users' element={<Users />} />
             <Route path='/event/:id' element={<PreviewEvent />} />
             <Route path='/login' element={<Login />} />
-            {/*  <Route path="/home">
-                <Home />
-              </Route>
-              <ProtectedRoute path="/events/:id">
-                <EventsDetails />
-              </ProtectedRoute>
-              <ProtectedRoute path="/events">
-                <EventsListPage
-                  calendarView={calendarView}
-                  setCalendarView={setCalendarView}
-                />
-              </ProtectedRoute>
-              <ProtectedRoute path="/myevents/:id">
-                <EventsDetails />
-              </ProtectedRoute>
-              <ProtectedRoute path="/myevents">
-                <MyEvents
-                  calendarView={myEventsCalendarView}
-                  setCalendarView={setMyEventsCalendarView}
-                />
-              </ProtectedRoute>
-              <ProtectedRoute path="/updateevent/:id">
-                <UpdateEvent />
-              </ProtectedRoute>
-              <ProtectedRoute path="/create">
-                <Create />
-              </ProtectedRoute>
-              <Route path="/signup">
-                <SignUp />
-              </Route>
-              <Route path="/login">
-                <Login />
-              </Route>
-              <Route path="/forgotpassword">
-                <ForgotPassword />
-              </Route>
-              <ProtectedRoute path="/updateprofile">
-                <UpdateProfile />
-              </ProtectedRoute>
-              <ProtectedRoute path="/updateemail">
-                <UpdateEmail />
-              </ProtectedRoute>
-              <ProtectedRoute path="/updatefullname/:docId">
-                <UpdateFullName />
-              </ProtectedRoute>
-              <ProtectedRoute path="/changepassword">
-                <ChangePassword />
-              </ProtectedRoute>
-              <ProtectedRoute path="/verifyemail">
-                <VerifyEmail />
-              </ProtectedRoute>
-              <Route path="/notverified">
-                <EmailNotVerified />
-              </Route>
-              <ProtectedRoute path="/user/:id">
-                <UserPreview />
-              </ProtectedRoute>
-              <ProtectedRoute path="/nearyou">
-                <NearYou />
-              </ProtectedRoute>
-              <Route path="*">
-                <NotFound />
-  </Route>*/}
+            <Route path='/register' element={<Register />} />
           </Routes>
         </Container>
-        {/* </AuthProvider> */}
-        {/* </div> */}
       </Router>
     </AuthProvider>
   );
